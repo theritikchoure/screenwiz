@@ -1,0 +1,13 @@
+.dark-theme {
+    height: 100vh;
+    background-color: #1f1f1f;
+
+    .main {
+        background-color: #1f1f1f;
+        color: #000;
+    }
+
+    .main-txt {
+        color: white;
+    }
+}

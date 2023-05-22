@@ -1,4 +1,11 @@
-let btn = document.querySelector(".record-btn")
+let btn = document.querySelector(".record-btn");
+
+window.onload = () => {
+
+  if (localStorage.getItem("theme") === 'light-theme') {
+      themeToggle();
+  }
+}
 
 btn.addEventListener("click", async function () {
   let stream = await navigator.mediaDevices.getDisplayMedia({
@@ -40,3 +47,13 @@ btn.addEventListener("click", async function () {
     //we have to start the recorder manually
     mediaRecorder.start()
 })
+
+function themeToggle() {
+  // Toggle the theme class on the root element
+  const rootElement = document.body; // Get the root HTML element
+
+  rootElement.classList.toggle("dark-theme");
+  rootElement.classList.toggle("light-theme");
+
+  localStorage.setItem("theme", rootElement.className);
+}
